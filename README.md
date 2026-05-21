@@ -155,7 +155,7 @@ Important defaults:
 server.port=8081
 spring.datasource.url=jdbc:mysql://localhost:3306/leadershipcompetency_db?useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&useSSL=false
 spring.datasource.username=root
-spring.datasource.password=1604
+spring.datasource.password=yourpassword
 spring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:8080/realms/insa-realm
 spring.security.oauth2.resourceserver.jwt.jwk-set-uri=http://localhost:8080/realms/insa-realm/protocol/openid-connect/certs
 spring.jpa.hibernate.ddl-auto=update
