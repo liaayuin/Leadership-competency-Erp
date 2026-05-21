@@ -211,16 +211,16 @@ This allows Hibernate to create and update tables automatically on startup. The 
 
 ### Tables
 
-| Table | Description |
-|-------|-------------|
-| `departments` | Hierarchical INSA org structure (8 departments, 3 levels deep) |
-| `positions` | Job positions with level weight (1=Head to 5=Junior) |
-| `employees` | Employee records with Keycloak UUID mapping (72 seeded users) |
-| `hr_comp_category` | 6 competency categories with Division/Director weights |
-| `hr_comp_weight` | 24 competency definitions with per-category weights |
-| `evaluation_headers` | Evaluation submissions with rater role and total score |
-| `evaluation_ratings` | Per-competency scores within each evaluation |
-| `system_config` | Configurable role weights and qualitative bonus weights |
+| Table                | Description                                                    |
+| -------------------- | -------------------------------------------------------------- |
+| `departments`        | Hierarchical INSA org structure (8 departments, 3 levels deep) |
+| `positions`          | Job positions with level weight (1=Head to 5=Junior)           |
+| `employees`          | Employee records with Keycloak UUID mapping (72 seeded users)  |
+| `hr_comp_category`   | 6 competency categories with Division/Director weights         |
+| `hr_comp_weight`     | 24 competency definitions with per-category weights            |
+| `evaluation_headers` | Evaluation submissions with rater role and total score         |
+| `evaluation_ratings` | Per-competency scores within each evaluation                   |
+| `system_config`      | Configurable role weights and qualitative bonus weights        |
 
 Full schema documentation is in `DATABASE-SCHEMA.md`.
 
@@ -273,12 +273,12 @@ http://localhost:3000
 
 Use the seeded credentials:
 
-| Employee ID | Password | Role |
-|-------------|----------|------|
-| `hr-002` | `Welcome@123` | `ROLE_HR_ADMIN` |
-| `mgmt-director-01` | `Welcome@123` | `ROLE_MANAGEMENT` |
+| Employee ID                   | Password      | Role              |
+| ----------------------------- | ------------- | ----------------- |
+| `hr-002`                      | `Welcome@123` | `ROLE_HR_ADMIN`   |
+| `mgmt-director-01`            | `Welcome@123` | `ROLE_MANAGEMENT` |
 | `MGMT-100` through `MGMT-109` | `Welcome@123` | `ROLE_MANAGEMENT` |
-| `EMP-001` through `EMP-060` | `Welcome@123` | `ROLE_MOYTEGNA` |
+| `EMP-001` through `EMP-060`   | `Welcome@123` | `ROLE_MOYTEGNA`   |
 
 ## Authentication and Roles
 
@@ -286,19 +286,19 @@ The frontend signs users in with Keycloak through `@react-keycloak/web`. The bac
 
 ### Role Mapping
 
-| Role | Authority | Access |
-|------|-----------|--------|
-| `ROLE_HR_ADMIN` | HR Administrator | Full access — Admin panel, all reports (unrestricted), system config |
-| `ROLE_MANAGEMENT` | Management | Evaluation form, subordinate reports (self-view blocked) |
-| `ROLE_MOYTEGNA` | Staff | Evaluation form only |
+| Role              | Authority        | Access                                                               |
+| ----------------- | ---------------- | -------------------------------------------------------------------- |
+| `ROLE_HR_ADMIN`   | HR Administrator | Full access — Admin panel, all reports (unrestricted), system config |
+| `ROLE_MANAGEMENT` | Management       | Evaluation form, subordinate reports (self-view blocked)             |
+| `ROLE_MOYTEGNA`   | Staff            | Evaluation form only                                                 |
 
 ### Role-Based UI
 
-| Feature | Staff | Management | HR Admin |
-|---------|-------|-----------|----------|
-| Evaluation Form | ✅ | ✅ | ✅ |
-| Reports View | ❌ | ✅ (subordinates) | ✅ (unrestricted) |
-| Admin Panel | ❌ | ❌ | ✅ |
+| Feature         | Staff | Management        | HR Admin          |
+| --------------- | ----- | ----------------- | ----------------- |
+| Evaluation Form | ✅    | ✅                | ✅                |
+| Reports View    | ❌    | ✅ (subordinates) | ✅ (unrestricted) |
+| Admin Panel     | ❌    | ❌                | ✅                |
 
 ### Frontend Role Checking
 
